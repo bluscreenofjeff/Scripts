@@ -1,0 +1,36 @@
+First Time Setup:
+apt-get install apache2
+a2enmod rewrite proxy proxy_http 
+nano /etc/apache2/apache.conf
+Change "AllowOverride None" to "AllowOverride All" in the directory setting you will be serving your malicious page from
+
+service apache2 restart
+
+Now place the .htaccess file for the redirection you'd like to perform in the web root of your server.
+	- .htaccess files apply to all subdirectories unless overriden by another .htaccess file
+
+
+--- Mobile User Redirection ---
+Line 3: Change http://TEAMSERVER-WAN-IP/MOBILE-PROFILER-PATH to the path you'd like served to mobile devices
+Line 4: Change http://TEAMSERVER-WAN-IP to your Cobalt Strike teamserver's IP. The original request URI will be sent to the teamserver
+
+
+--- Invalid URI Redirection ---
+Line 2: Change profiler and payload to any URIs you would like to allow through. Seperate all paths by a pipe "|" character.
+Line 3: Change http://SPOOFED-DOMAIN\.com to the URL you the user visits to access this server. Be sure to escape the period in the '.com'
+Line 4: Change http://TEAMSERVER-IP to your Cobalt Strike teamserver's IP. The original request URI will be sent to the teamserver
+Line 5: Change http://REDIRECTION-URL.com/ to the URL you would like users to be directed to if an invalid URI is requested. This can be the target company's domain or 404 page.
+
+
+--- Operating System Based Redirection ---
+Host os-detector.html on your Cobalt Strike teamserver.
+
+In the .htaccess file, change the URLs on lines 3, 5, 7, and 9 to payloads that correspond to the detected operating system.
+Line 11: Change the URL to the path you would like to send an unknown or undetecting operating system to
+Line 12: Change the URL to the hosted path of the os-detector.html page
+
+
+For more information, see my blog posts about mod_rewrite:
+https://bluescreenofjeff.com/2016-03-22-strengthen-your-phishing-with-apache-mod_rewrite-and-mobile-user-redirection/
+https://bluescreenofjeff.com/2016-03-29-invalid-uri-redirection-with-apache-mod_rewrite/
+https://bluescreenofjeff.com/2016-04-05-operating-system-based-redirection-with-apache-mod_rewrite/

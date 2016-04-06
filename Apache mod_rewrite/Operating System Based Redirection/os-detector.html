@@ -1,0 +1,23 @@
+<html><head></head>
+<body>
+
+<script>
+var url_base='http://'+window.location.host;
+var OSName="unknown";
+var query_string=document.location.search;
+var request_path=window.location.pathname.substr(1);
+if (navigator.appVersion.indexOf("Win")!=-1) OSName="windows";
+if (navigator.appVersion.indexOf("Mac")!=-1) OSName="mac";
+if (navigator.appVersion.indexOf("X11")!=-1) OSName="unix";
+if (navigator.appVersion.indexOf("Linux")!=-1) OSName="linux";
+
+var os_string='&os_id='+OSName;
+if (query_string == '') os_string='?os_id='+OSName;
+if (query_string.indexOf("os_id=")!=-1) os_string='';
+
+window.location.replace(url_base+'/'+request_path+query_string+os_string);
+
+</script>
+
+</body></html>
+

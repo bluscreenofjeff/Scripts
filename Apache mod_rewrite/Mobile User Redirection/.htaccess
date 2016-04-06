@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} "android|blackberry|googlebot-mobile|iemobile|ipad|iphone|ipod|opera mobile|palmos|webos" [NC]
+RewriteRule ^.*$ http://TEAMSERVER-WAN-IP/MOBILE-PROFILER-PATH [P]
+RewriteRule ^.*$ http://TEAMSERVER-WAN-IP%{REQUEST_URI} [P]
