@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REMOTE_ADDR} ^100\.0\.0\. [OR]
+RewriteCond %{REMOTE_ADDR} ^100\.0\.1\.
+RewriteRule ^.*$ http://TEAMSERVER-IP%{REQUEST_URI} [P]
+RewriteRule ^.*$ http://COMPANYDOMAIN.com/404.html/? [L,R=302]
