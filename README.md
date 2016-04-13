@@ -2,10 +2,6 @@
 
 This repo will house any one-off scripts that don't merit their own repo.
 
-## Aggressor Scripts
-Scripts written in [Cobalt Strike's](https://cobaltstrike.com) scripting language, Aggressor. 
-* **beacon_to_empire.cna** - a script that leverages [Powershell Empire's](http://www.powershellempire.com/) RESTful API to migrate sessions from a Beacon session on Cobalt Strike
-
 ## Apache mod_rewrite
 Rulesets and supplemental scripts for use with Apache's mod_rewrite to strengthen phishing campaigns. For more info, see my [blog post](https://bluescreenofjeff.com/2016-03-22-strengthen-your-phishing-with-apache-mod_rewrite-and-mobile-user-redirection/) on the subject.
 * **Mobile User Redirection** - Redirect any users with mobile device user agents
