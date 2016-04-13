@@ -11,6 +11,7 @@ Rulesets and supplemental scripts for use with Apache's mod_rewrite to strengthe
 * **Mobile User Redirection** - Redirect any users with mobile device user agents
 * **Invalid URI Redirection** - Redirect any requests for non-existant resources
 * **Operating System Based Redirection** - Redirect users to different payloads or phishing sites based upon their operating system
+* **Combatting Incident Responders** - Use redirection rules to mitigate risks posed by incident responders
 
 ## kali_setup.sh
 A script to setup a Kali VM for testing.
