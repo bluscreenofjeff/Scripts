@@ -8,6 +8,7 @@ Rulesets and supplemental scripts for use with Apache's mod_rewrite to strengthe
 * **Invalid URI Redirection** - Redirect any requests for non-existant resources
 * **Operating System Based Redirection** - Redirect users to different payloads or phishing sites based upon their operating system
 * **Combatting Incident Responders** - Use redirection rules to mitigate risks posed by incident responders
+* **Phishing Link Expiration** - Expire requests clicked more than a designated number of times. Increases the time it will take incident responders to evaluate the malicious website.
 
 ## kali_setup.sh
 A script to setup a Kali VM for testing.

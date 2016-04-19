@@ -30,7 +30,31 @@ Line 11: Change the URL to the path you would like to send an unknown or undetec
 Line 12: Change the URL to the hosted path of the os-detector.html page
 
 
+--- Combatting Incident Responders ---
+block_ir_user_agents_ruleset.txt
+	Line 3: Change the URL to path you would like to send any users with the configured common IR user agents to
+
+ip_blacklisting_ruleset.txt
+	Lines 2 and 3: Change the IPs to the desired blacklisted IP ranges. Note that the periods must be escaped. The range in the example equates to a /24 CIDR range. You can add as many ranges as you'd like by copying Line 2 and pasting it between Line 2 and 3.
+	Line 4: Change the URL to the path you would like to send any users originating from blocked ranges to
+	Line 5: Change the URL to the website path you would like valid users to receive
+
+ip_blacklisting_ruleset.txt
+	Lines 2 and 3: Change the IPs to the desired whitelisted IP ranges. Note that the periods must be escaped. The range in the example equates to a /24 CIDR range. You can add as many ranges as you'd like by copying Line 2 and pasting it between Line 2 and 3.
+	Line 4: Change the URL to the website path you would like valid users to receive
+	Line 5: Change the URL to the path you would like to send any users not originating from approved IP ranges to
+
+time_based_redirection_ruleset.txt
+	Lines 2 and 3: Configure the time, in 24h format, in whihc you would like the website to be accessible
+	Line 4: Change the URL to the website path you would served during valid hours
+	Line 5: Change the URL to the website path you would served outside valid hours (by default, a redirect)
+
+--- Expire Phishing Links ---
+For full instructions on how to configure this, please see https://bluescreenofjeff.com/2016-04-19-expire-phishing-links-with-apache-rewritemap/
+
 For more information, see my blog posts about mod_rewrite:
 https://bluescreenofjeff.com/2016-03-22-strengthen-your-phishing-with-apache-mod_rewrite-and-mobile-user-redirection/
 https://bluescreenofjeff.com/2016-03-29-invalid-uri-redirection-with-apache-mod_rewrite/
 https://bluescreenofjeff.com/2016-04-05-operating-system-based-redirection-with-apache-mod_rewrite/
+https://bluescreenofjeff.com/2016-04-12-combatting-incident-responders-with-apache-mod_rewrite/
+https://bluescreenofjeff.com/2016-04-19-expire-phishing-links-with-apache-rewritemap/

