@@ -15,3 +15,6 @@ A script to setup a Kali VM for testing.
 
 ## powershell_exe.py
 Uses TrustedSec's Powershell Unicorn to generate a powershell payload and wraps it into an EXE using WinRAR under WINE. For setup instructions, see my blog post [Making a Powershell EXE Payload](https://bluescreenofjeff.com/2015-05-13-making-a-powershell-exe-payload/)
+
+## toolkit-update.sh
+Updates the GitHub hosted tools in opt.
